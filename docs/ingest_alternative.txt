@@ -1,0 +1,12 @@
+
+
+Logged into the database for ingest, rather than running the ingest scripts.
+
+mysql -u <username> -p
+use jwebster_dev
+
+LOAD DATA LOCAL INFILE '/home/jwebster/exports/<filename.csv>'
+INTO TABLE tcp_ports
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
