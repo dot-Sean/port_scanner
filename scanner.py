@@ -62,3 +62,17 @@ for port in range(min_port, max_port + 1):
                 pass
 
 stop_time = datetime.now()
+total_time_duration = stop_time - start_time
+print("\n[*] Scanning Finished At %s ..." % (time.strftime("%H:%M:%S")))
+print("[*] Scanning Duration: %s ..." % (total_time_duration))
+
+if len(open_ports) == 0:
+	print "There are no open ports available on the target system.";
+else:
+	print "\nOpen Ports"
+	print "================"
+	for port in open_ports:
+		print hilite(str(port), True, False);
+	
+print "\nThere are a total of " + str(len(open_ports)) + " available on the target system.\n\n";
+	
